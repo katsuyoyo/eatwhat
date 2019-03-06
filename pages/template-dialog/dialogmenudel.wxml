@@ -1,0 +1,13 @@
+<!-- <template name="dialogmenudel">
+  <view class="qd-dialog-menudel {{ qdDialogMenudel.show ? 'qd-dialog--show' : '' }}">
+    <view class="qd-dialog--mask" bindtap='closeDialog'></view>
+    确定删除该菜单？
+  </view>
+  </view>
+  <view class="qd-dialog__footer {{ qdDialog.buttonsShowVertical ? 'qd-dialog__footer--vertical' : 'qd-dialog__footer--horizon' }}">
+    <block wx:for="{{ qdDialog.buttons }}" wx:key="{{ item.text }}-{{ item.types }}">
+      <button class="qd-dialog__button_submit qd-btn" data-types="{{ item.types }}" catchtap="submitDialog" style="color: rgb(67, 59, 185)">确定</button>
+      <button class="qd-dialog__button qd-btn" data-types="{{ item.types }}" catchtap="closeDialog" style="color: {{ item.color || '#333' }}">{{ item.text }}</button>
+    </block>
+  </view>
+</template> -->

@@ -1,0 +1,41 @@
+<!--menu.wxml-->
+<view class="container">
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <import src="../template-dialog/dialogindex.wxml" />
+    <view style='text-align:center'>
+      点击这里可添加菜单：
+    </view>
+    <view>
+      <template is="dialog" data="{{qdDialog:qdDialog}}"></template>
+      <button bindtap='openDialog'  class='btn1'>
+      <image class='btnImg' src="../images/add.jpg"></image>
+      新增菜单
+      </button>
+    </view>
+    <view class="table">
+      <view class="tr bg-w">
+        <view class="th">编号</view>
+        <view class="thlong">菜单名</view>
+        <view class="th">操作</view>
+      </view>
+      <block wx:for="{{listData}}" wx:key="{{foodId}}">
+        <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+          <view class="td">{{item.foodId}}</view>
+          <view class="td">{{item.foodName}}</view>
+          <view class="td">
+            <button type="warn" size="mini" bindtap="deleteMenu" data-foodid='{{item.foodId}}' data-foodname='{{item.foodName}}'> 删除 </button>
+          </view>
+        </view>
+        <view class="tr" wx:else>
+          <view class="td">{{item.foodId}}</view>
+          <view class="td">{{item.foodName}}</view>
+          <view class="td">
+            <button type="warn" size="mini" bindtap="deleteMenu" data-foodid='{{item.foodId}}' data-foodname='{{item.foodName}}'> 删除 </button>
+          </view>
+        </view>
+      </block>
+    </view>
+    <!-- <button class="" type="success" bindtap="editModel">确认</button> -->
+    <!-- <button class="" type="default" bindtap="closeModel">返回</button> -->
+  </form>
+</view>
